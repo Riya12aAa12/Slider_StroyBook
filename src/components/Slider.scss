@@ -1,0 +1,117 @@
+.slider-container {
+  position: relative;
+  width: 50%; 
+  height: 8px;
+  margin: 20px auto; 
+}
+body{
+background-image: url("back.jpeg");
+background-repeat: no-repeat;
+background-size: 1200px;
+}
+.slider-track {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ddd;
+  border-radius: 4px;
+  z-index: -1;
+}
+
+.slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: transparent;
+  outline: none;
+  position: absolute;
+  top: 0;
+  pointer-events: none;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px; 
+    height: 24px; 
+    background-color: #28a745;
+    border: 5px solid white; 
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: background-color 0.3s, transform 0.2s;
+
+    &:hover {
+      background-color: #218838;
+    }
+
+    &:active {
+      background-color: #1e7e34;
+      transform: scale(1.2);
+    }
+  }
+
+  &::-moz-range-thumb {
+    width: 24px; 
+    height: 24px;
+    background-color: #28a745;
+    border: 5px solid white; 
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: background-color 0.3s, transform 0.2s;
+
+    &:hover {
+      background-color: #218838;
+    }
+
+    &:active {
+      background-color: #1e7e34;
+      transform: scale(1.2);
+    }
+  }
+
+  // Handle size variations
+  &.size_24 {
+    &::-webkit-slider-thumb {
+      width: 24px; 
+      height: 24px; 
+    }
+
+    &::-moz-range-thumb {
+      width: 24px; 
+      height: 24px; 
+    }
+  }
+
+  &.size_32 {
+    &::-webkit-slider-thumb {
+      width: 32px; 
+      height: 32px; 
+    }
+
+    &::-moz-range-thumb {
+      width: 32px; 
+      height: 32px; 
+    }
+  }
+}
+
+.tooltip {
+  position: absolute;
+  top: -40px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  display: none; 
+
+  /* Positioning and display adjustments */
+  .slider-container:hover & {
+    display: block;
+  }
+}
